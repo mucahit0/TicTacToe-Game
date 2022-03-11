@@ -14,11 +14,6 @@ const winningConditions = [
     [0,4,8],
     [2,4,6]
 ]
-
-
-
-console.log(winningConditions[0])
-
 const startGame = () => {
 
     playerText.textContent = `${player}'s turn`;
@@ -27,8 +22,6 @@ const startGame = () => {
 
 }
 
-
-
 function chooseArea(box){
     if(box.textContent === ""){
         box.textContent = player;
@@ -36,9 +29,8 @@ function chooseArea(box){
     }else{
         return;
     }
+    
     checkWinner();
-
-
 }
 
 function turnPlayer(){
@@ -50,7 +42,6 @@ function turnPlayer(){
         playerText.textContent = `${player}'s turn`;
     }
 }    
-
 
 function checkWinner(){ 
     
@@ -80,8 +71,5 @@ button.addEventListener('click',()=>{
 function clearBoxes(){
     boxes.forEach(box => box.textContent = "");
 }
-
-
-
 
 startGame();
