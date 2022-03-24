@@ -4,8 +4,6 @@ const button = document.getElementById('restart');
 
 let player = "X";
 
-let count = 0;
-
 const winningConditions = [
     [0,1,2],
     [3,4,5],
@@ -16,7 +14,6 @@ const winningConditions = [
     [0,4,8],
     [2,4,6]
 ]
-
 const startGame = () => {
 
     playerText.textContent = `${player}'s turn`;
@@ -25,16 +22,14 @@ const startGame = () => {
 
 }
 
-
-
 function chooseArea(box){
     if(box.textContent === ""){
         box.textContent = player;
-        count++;
         turnPlayer();
     }else{
         return;
     }
+    
     checkWinner();
 }
 
@@ -47,7 +42,6 @@ function turnPlayer(){
         playerText.textContent = `${player}'s turn`;
     }
 }    
-
 
 function checkWinner(){ 
     
@@ -62,11 +56,13 @@ function checkWinner(){
             playerText.textContent = `${allBox[a].textContent} is the winner!`
             player = 'X'
             button.style.display = 'block';
-        }else if(count === 9){ // if all boxes are filled and no winner.
+        }else if(count === 9){ // if all boxes are filled and no winner
             playerText.textContent = "It's a draw!"
             button.style.display = 'block';
-        }
+        }    
+
     }    
+    
 }    
 
 button.addEventListener('click',()=>{
