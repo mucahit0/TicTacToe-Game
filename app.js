@@ -62,7 +62,7 @@ function checkWinner(){
             playerText.textContent = `${allBox[a].textContent} is the winner!`
             player = 'X'
             button.style.display = 'block';
-        }else if(count === 9){ // if all boxes are filled and no winner
+        }else if(count === 9){ // if all boxes are filled and no winner.
             playerText.textContent = "It's a draw!"
             button.style.display = 'block';
         }
